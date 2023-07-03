@@ -1,0 +1,17 @@
+def calculate_mean(numbers):
+    total = sum(numbers)
+    count = len(numbers)
+    mean = total / count
+    return mean
+
+def main():
+    data = []
+    n = int(input("Enter the number of elements: "))
+    for i in range(n):
+        num = float(input(f"Enter number {i+1}: "))
+        data.append(num)
+    mean_value = calculate_mean(data)
+    print("Mean:", mean_value)
+
+if __name__ == '__main__':
+    main()
