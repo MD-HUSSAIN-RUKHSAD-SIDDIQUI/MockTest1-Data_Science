@@ -1,0 +1,24 @@
+from scipy import stats
+
+def perform_hypothesis_test(sample1, sample2):
+    t_statistic, p_value = stats.ttest_ind(sample1, sample2)
+    return p_value
+
+def main():
+    data1 = []
+    data2 = []
+    n = int(input("Enter the number of elements for sample 1: "))
+    for i in range(n):
+        num = float(input(f"Enter number {i+1} for sample 1: "))
+        data1.append(num)
+    
+    m = int(input("Enter the number of elements for sample 2: "))
+    for j in range(m):
+        num = float(input(f"Enter number {j+1} for sample 2: "))
+        data2.append(num)
+
+    p_value = perform_hypothesis_test(data1, data2)
+    print("P-value:", p_value)
+
+if __name__ == '__main__':
+    main()
